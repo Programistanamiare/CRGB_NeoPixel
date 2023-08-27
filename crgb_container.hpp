@@ -10,20 +10,21 @@ public:
   CRGB_Container(CRGB_buffer* crgb_buffer_array, uint16_t array_size)
   : buffer{crgb_buffer_array}, size{array_size} {}
 
-  void add_CRGB_buffer(CRGB_buffer* crgb_buffer_array, uint16_t array_size)
+  void setCRGB_buffer(CRGB_buffer* crgb_buffer_array, uint16_t array_size)
   {
     this->buffer = crgb_buffer_array;
     this->size = array_size;
   }
 
-  const uint16_t& getStripNumber() const
+  const uint16_t& lenght() const
   {
     return this->size;
   }
 
-  const uint16_t& getStripSize(const uint16_t index) const
+  const uint16_t& getStripLenght(const uint16_t index) const
   {
-    return this->buffer[index].lenght();
+    if (buffer != nullptr) return this->buffer[index].lenght();
+    return 0;
   }
 
   CRGB& operator[] (const PixelPos& pos)

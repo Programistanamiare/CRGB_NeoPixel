@@ -1,6 +1,6 @@
 #pragma once
 
-#include "crgb_container_user.hpp"
+#include "../../crgb_container_user.hpp"
 
 class WavePixels : public CRGB_Container_user
 {
