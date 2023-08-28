@@ -72,6 +72,8 @@ A structure that stores information about the LED strip and pixel indices.
     uint16_t pixel;
   }
 ```
+---
+<br>
 
 A structure that stores information about the connection point of two LED strips.
 
@@ -82,6 +84,8 @@ A structure that stores information about the connection point of two LED strips
     PixelPos second;
   }
 ```
+---
+<br>
 
 </details>
 
@@ -95,6 +99,8 @@ Constructor<br>
 ```cpp
   CRGB_buffer::CRGB_buffer(uint16_t lenght);
 ```
+---
+<br>
 
 A template member function that sets the signal pin.<br>
 @param **data_pin** data pin number.
@@ -103,6 +109,8 @@ A template member function that sets the signal pin.<br>
   template<uint8_t data_pin>
   void CRGB_buffer::setup();
 ```
+---
+<br>
 
 Reloading the '[ ]' operator to manage a single pixel of the led strip.<br>
 @param **index** pixel index,<br>
@@ -111,12 +119,16 @@ Reloading the '[ ]' operator to manage a single pixel of the led strip.<br>
 ```cpp
   CRGB& CRGB_buffer::operator[](uint16_t index);
 ```
+---
+<br>
 
 A member function that return number of pixels.
 
 ```cpp
   const uint16_t CRGB_buffer::lenght() const;
 ```
+---
+<br>
 
 </details>
 
@@ -124,7 +136,7 @@ A member function that return number of pixels.
 
 <details>
 <summary>A class storing <b>CRGB_buffer</b> objects.</summary>
----
+
 Constructors:<br>
 
 ```cpp
@@ -138,8 +150,8 @@ Constructors:<br>
   CRGB_Container::CRGB_Container(CRGB_buffer* crgb_buffer_array, uint16_t array_size);
 ```
 ---
-<br><br>
----
+<br>
+
 A member function that sets a pointer to the array of led strips and its length.<br>
 @param **crgb_buffer_array** pointer to CRGB_buffer objects array,<br>
 @param **array_size** CRGB_buffer array size.<br>
@@ -150,16 +162,16 @@ A member function that sets a pointer to the array of led strips and its length.
   void CRGB_Container::setCRGB_buffer(CRGB_buffer* crgb_buffer_array, uint16_t array_size);
 ```
 ---
-<br><br>
----
+<br>
+
 A member function that return number of CRGB_buffer objects.
 
 ```cpp
   const uint16_t CRGB_Container::lenght() const;
 ```
 ---
-<br><br>
----
+<br>
+
 A member function that return number of pixel in CRGB_buffer object.<br>
 @param **index** CRGB_buffer index.<br>
 @attention **If CRGB_buffer array has not been set this function always return 0.**
@@ -168,8 +180,8 @@ A member function that return number of pixel in CRGB_buffer object.<br>
   const uint16_t CRGB_Container::getStripLenght(const uint16_t& index) const;
 ```
 ---
-<br><br>
----
+<br>
+
 Reloading the '[ ]' operator to manage the single CRGB_buffer LEDs strip.<br>
 @param **index** index of CRGB_buffer.<br>
 @return reference to CRGB_buffer object.
@@ -179,8 +191,8 @@ Reloading the '[ ]' operator to manage the single CRGB_buffer LEDs strip.<br>
   CRGB_buffer& CRGB_Container::operator[](const uint16_t& index);
 ```
 ---
-<br><br>
----
+<br>
+
 Reloading the '[ ]' operator to manage the single CRGB_buffer LED pixel.<br>
 @param **pos** structure that store information about indexes CRGB_buffer and pixel from this object.<br>
 @return reference to CRGB object.<br>
@@ -199,7 +211,7 @@ Reloading the '[ ]' operator to manage the single CRGB_buffer LED pixel.<br>
 
 #### Constructors:<br>
 
----
+
 Default constructor.<br>
 @attention **When using this constructor, the <b>CRGB_Container_user::setContainer(CRGB_Container*)</b> member function should be used for the object to work properly.**
 
@@ -207,8 +219,8 @@ Default constructor.<br>
   CRGB_Container_user::CRGB_Container_user();
 ```
 ---
-<br><br>
----
+<br>
+
 A constructor that takes a pointer to a <b>CRGB_Container</b> object.<br>
 @param **container** pointer to CRGB_Container object.
 
@@ -216,7 +228,8 @@ A constructor that takes a pointer to a <b>CRGB_Container</b> object.<br>
   CRGB_Container_user::CRGB_Container_user(CRGB_Container* container);
 ```
 ---
-<br><br>
+<br>
+
 A member function that takes a pointer to a <b>CRGB_Container</b> object.<br>
 @param **container** pointer to CRGB_Container object.
 
