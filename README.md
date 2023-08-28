@@ -213,7 +213,7 @@ Reloading the '[ ]' operator to manage the single CRGB_buffer LED pixel.<br>
 
 
 Default constructor.<br>
-@attention **When using this constructor, the <b>CRGB_Container_user::setContainer(CRGB_Container*)</b> member function should be used for the object to work properly.**
+@attention **When using this constructor, the <b>CRGB_Container_user::setContainer(CRGB_Container*)</b> member function should be used for the object to work properly.***
 
 ```cpp
   CRGB_Container_user::CRGB_Container_user();
