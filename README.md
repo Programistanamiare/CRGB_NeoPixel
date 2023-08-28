@@ -124,7 +124,7 @@ A member function that return number of pixels.
 
 <details>
 <summary>A class storing <b>CRGB_buffer</b> objects.</summary>
-
+---
 Constructors:<br>
 
 ```cpp
@@ -137,7 +137,9 @@ Constructors:<br>
 ```cpp
   CRGB_Container::CRGB_Container(CRGB_buffer* crgb_buffer_array, uint16_t array_size);
 ```
-
+---
+<br><br>
+---
 A member function that sets a pointer to the array of led strips and its length.<br>
 @param **crgb_buffer_array** pointer to CRGB_buffer objects array,<br>
 @param **array_size** CRGB_buffer array size.<br>
@@ -147,13 +149,17 @@ A member function that sets a pointer to the array of led strips and its length.
 ```cpp
   void CRGB_Container::setCRGB_buffer(CRGB_buffer* crgb_buffer_array, uint16_t array_size);
 ```
-
+---
+<br><br>
+---
 A member function that return number of CRGB_buffer objects.
 
 ```cpp
   const uint16_t CRGB_Container::lenght() const;
 ```
-
+---
+<br><br>
+---
 A member function that return number of pixel in CRGB_buffer object.<br>
 @param **index** CRGB_buffer index.<br>
 @attention **If CRGB_buffer array has not been set this function always return 0.**
@@ -161,7 +167,9 @@ A member function that return number of pixel in CRGB_buffer object.<br>
 ```cpp
   const uint16_t CRGB_Container::getStripLenght(const uint16_t& index) const;
 ```
-
+---
+<br><br>
+---
 Reloading the '[ ]' operator to manage the single CRGB_buffer LEDs strip.<br>
 @param **index** index of CRGB_buffer.<br>
 @return reference to CRGB_buffer object.
@@ -170,7 +178,9 @@ Reloading the '[ ]' operator to manage the single CRGB_buffer LEDs strip.<br>
 ```cpp
   CRGB_buffer& CRGB_Container::operator[](const uint16_t& index);
 ```
-
+---
+<br><br>
+---
 Reloading the '[ ]' operator to manage the single CRGB_buffer LED pixel.<br>
 @param **pos** structure that store information about indexes CRGB_buffer and pixel from this object.<br>
 @return reference to CRGB object.<br>
@@ -179,5 +189,40 @@ Reloading the '[ ]' operator to manage the single CRGB_buffer LED pixel.<br>
 ```cpp
   CRGB& CRGB_Container::operator[](const PixelPos& pos);
 ```
+---
+</details>
+
+### CRGB_Container_user (abstract class)
+
+<details>
+<summary>an abstract class that provides a constructor that takes a pointer to the <b>CRGB_Container</b> class, and a method to set it.</summary>
+
+#### Constructors:<br>
+
+---
+Default constructor.<br>
+@attention **When using this constructor, the <b>CRGB_Container_user::setContainer(CRGB_Container*)</b> member function should be used for the object to work properly.**
+
+```cpp
+  CRGB_Container_user::CRGB_Container_user();
+```
+---
+<br><br>
+---
+A constructor that takes a pointer to a <b>CRGB_Container</b> object.<br>
+@param **container** pointer to CRGB_Container object.
+
+```cpp
+  CRGB_Container_user::CRGB_Container_user(CRGB_Container* container);
+```
+---
+<br><br>
+A member function that takes a pointer to a <b>CRGB_Container</b> object.<br>
+@param **container** pointer to CRGB_Container object.
+
+```cpp
+  void CRGB_Container_user::setContainer(CRGB_Container* container);
+```
+---
 
 </details>
